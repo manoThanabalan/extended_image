@@ -45,7 +45,7 @@ class TransparentMaterialPageRoute<T> extends PageRoute<T> {
     RouteSettings settings,
     this.maintainState = true,
     bool fullscreenDialog = false,
-  })  : assert(builder != null),
+  })  : assert(builder != null), 
         assert(maintainState != null),
         assert(fullscreenDialog != null),
         //assert(opaque),
@@ -330,7 +330,8 @@ class TransparentCupertinoPageRoute<T> extends PageRoute<T> {
   ) {
     if (route.fullscreenDialog) {
       return CupertinoFullscreenDialogTransition(
-        animation: animation,
+        primaryRouteAnimation: animation,
+        secondaryRouteAnimation: secondaryAnimation,
         child: child,
       );
     } else {
